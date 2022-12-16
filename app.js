@@ -110,8 +110,34 @@ let demo = document.querySelector('#demo')
           }
       }
   }
-  function showReturnsInBox(){
-    let checkArg = document.querySelector('#checkArg');
-    let checkFra = document.querySelector('#checkFra');;
+  function showReturnsInBox(name, inv, win){
+    let check = document.getElementsByName('winning');
+    let i = 0;
+    if(check[i].checked){
+        winningTeam = 'argentina';
+    }
+    else if(check[i+1]){
+        winningTeam = 'france';
+    }
+    let currentTotal = 0;
+    let opposingTotal = 0;
+    if(win == 'argentina'){
+        currentTotal = totalArg; 
+        opposingTotal = totalFra;
+    }
+    else if(win == 'france'){
+        currentTotal = totalFra;
+        opposingTotal = totalArg;
+    }
+    deezBetsCom = (deezBetsCharge/100)*opposingTotal;
+      
+    let totalReturn = Math.floor(inv + (inv/currentTotal)*(opposingTotal-deezBetsCom));
+    if(winningTeam == 'argentina'){
+        for(let i = 0;i < argentina.length;i++){
+            demo.innerHTML = `${name}\n\t-invested => ${inv}\n\t-return => ${totalReturn}\n\t-profit => ${totalReturn-inv}\n`;
+        }
+    }
+
+    showReturns();
   }
-  demo.textContent = deezBetsCom;
+  
