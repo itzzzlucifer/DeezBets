@@ -54,7 +54,8 @@ const argentina1 = [
       if(dispVal){console.log('\n------- '+contname+' SUP -------\n')}
       array.forEach((a)=>{
           if(dispVal){
-              console.log(a.name +' invested = Rs.'+a.initInv +' '+ a.status);
+                stringReturn=a.name +' invested = Rs.'+a.initInv +' '+ a.status;
+              console.log(stringReturn);
           }
           total += a.initInv;
       });

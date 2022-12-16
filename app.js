@@ -1,36 +1,37 @@
 const argentina = [
-    {name:'Prashant',initInv:100},
-    {name:'JD',initInv:50},
-    {name:'Bijay',initInv:75},
-    {name:'Aayush',initInv:50},
-    {name:'Sujal',initInv:50},
-    {name:'Hardik',initInv:50},
-    {name:'Sampurna',initInv:50},
-    {name:'Arun',initInv:50},
-    {name:'Renzeen',initInv:50},
-    {name:'Dhiraj',initInv:50},
-    {name:'Barun',initInv:10},
-    {name:'Reshman',initInv:20}
+    {name:'Prashant',initInv:100, status:true},
+    {name:'JD',initInv:50, status:true},
+    {name:'Bijay',initInv:75, status:true},
+    {name:'Aayush',initInv:50, status:false},
+    {name:'Sujal',initInv:50, status:false},
+    {name:'Hardik',initInv:50, status:false},
+    {name:'Sampurna',initInv:50, status:true},
+    {name:'Arun',initInv:50, status:true},
+    {name:'Renzeen',initInv:50, status:false},
+    {name:'Dhiraj',initInv:50, status:false},
+    {name:'Barun',initInv:10, status:true},
+    {name:'Reshman',initInv:20, status:false}
   ];
   
   const france = [
-    {name:'Anushka',initInv:20},
-    {name:'Nischit',initInv:50},
-    {name:'Sunil',initInv:50},
-    {name:'Yugank',initInv:50},
-    {name:'Rojal',initInv:50},
-    {name:'Bidharva',initInv:100},
-    {name:'Amul',initInv:100},
-    {name:'Kritim',initInv:100},
-    {name:'Kanxa',initInv:100},
-    {name:'Bhavesh',initInv:100},
-    {name:'Aaditya R.',initInv:50},
-    {name:'Aaditya S.',initInv:10}
+    {name:'Anushka',initInv:20, status:true},
+    {name:'Nischit',initInv:50, status:true},
+    {name:'Sunil',initInv:50, status:true},
+    {name:'Yugank',initInv:50, status:false},
+    {name:'Rojal',initInv:50, status:false},
+    {name:'Bidharva',initInv:100, status:true},
+    {name:'Amul',initInv:100, status:true},
+    {name:'Kritim',initInv:100, status:false},
+    {name:'Kanxa',initInv:100, status:false},
+    {name:'Bhavesh',initInv:100, status:true},
+    {name:'Aaditya R.',initInv:50, status:false},
+    {name:'Aaditya S.',initInv:10, status:true}
   ];
 //declare slots for placing value
 let argList = document.querySelector('#argInvestors');
 let fraList = document.querySelector('#fraInvestors');
-  //dummy total
+let demo = document.querySelector('#demo') 
+//dummy total
   let total = 0;
   //total amount on argentina
   let totalArg = displayInitInv(argentina, 'ARGENTINA', true, argList);
@@ -64,7 +65,7 @@ let fraList = document.querySelector('#fraInvestors');
   
       array.forEach((a)=>{
           if(dispVal){
-            element.innerHTML += '<li>'+a.name +' invested = Rs.'+a.initInv+'</li>';
+            element.innerHTML += '<li>'+a.name +' invested = Rs.'+a.initInv+' '+ a.status+'</li>';
           }
           total += a.initInv;
       });
@@ -109,4 +110,8 @@ let fraList = document.querySelector('#fraInvestors');
           }
       }
   }
-  console.log(deezBetsCom);
+  function showReturnsInBox(){
+    let checkArg = document.querySelector('#checkArg');
+    let checkFra = document.querySelector('#checkFra');;
+  }
+  demo.textContent = deezBetsCom;
