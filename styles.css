@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Poppins&display=swap');
+@counter-style football{
+    system: cyclic;
+    symbols: "🔥";
+    suffix:' ';
+}
+@media screen and (max-width:400px){
+body{
+    font-family:'Inter';
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin:0;
+    padding:0;
+    background-color: #75e2ff;
+}
+#app{
+    padding:2em 2em;
+    width:80%;
+    display:grid;
+    grid-template-columns: repeat(1, 100%);
+    grid-template-rows: repeat(2, 90vh);
+}
+.investorList{
+    border-radius: 20px;
+    border:solid black 2px;
+    font-size:1rem;
+    margin: 1rem 0.5rem;
+    padding:2rem;
+    color:#eaebed;
+    list-style-type: football;
+    overflow:hidden;
+}
+
+.argPeople>img, .fraPeople>img{
+    aspect-ratio: auto;
+    width:100%;
+    border-bottom:2px solid black;
+}
+.argPeople{
+    border:solid black 2px;
+    border-radius:20px;
+    overflow-y:scroll;
+    background-color: #5689C0;
+}
+.fraPeople{
+    border:solid black 2px;
+    border-radius:20px;
+    overflow:scroll;
+    background-color: #5689C0;
+}
+.displayBox>h3{
+    font-family:'Poppins';
+    font-weight:bold;
+    font-size:2rem;
+    text-align:center;
+    padding:0 1rem;
+}
+}
